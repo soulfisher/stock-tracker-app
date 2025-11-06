@@ -10,21 +10,15 @@ const SignIn = () => {
   const {
     register,
       handleSubmit,
-      control,
       formState: { errors, isSubmitting },
-  } = useForm<SignUpFormData>(
+  } = useForm<SignInFormData>(
     {
       defaultValues: {
-        fullName: '',
         email: '',
         password: '',
-        country: 'US',
-        investmentGoals: 'Growth',
-        riskTolerance: 'Medium',
-        preferredIndustry: 'Technology',
       }, mode: 'onBlur'
     }, );
-  const onSubmit = async (data: SignUpFormData) => {
+  const onSubmit = async (data: SignInFormData) => {
     try {
       console.log(data);
     } catch (error){
@@ -57,7 +51,7 @@ const SignIn = () => {
         />
 
         <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-          {isSubmitting ? 'Logging in...' : 'Log In'}
+          {isSubmitting ? 'Signing in...' : 'Sign In'}
         </Button>
 
         <FooterLink text="Don't have an account?" linkText="Sign up" href="/sign-up" />
